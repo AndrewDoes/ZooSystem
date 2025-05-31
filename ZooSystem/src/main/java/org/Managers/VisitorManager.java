@@ -1,5 +1,8 @@
 package org.Managers;
 
+import org.Main.UserInterfaceHandler;
+import org.Main.Visitor;
+
 public class VisitorManager {
     public void handleVisitorLogin() {
         while (true) {

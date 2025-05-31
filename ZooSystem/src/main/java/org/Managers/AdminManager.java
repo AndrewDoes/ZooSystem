@@ -1,5 +1,8 @@
 package org.Managers;
 
+import org.Main.Admin;
+import org.Main.UserInterfaceHandler;
+
 public class AdminManager {
     public void handleAdminLogin() {
         Admin admin = new Admin();
