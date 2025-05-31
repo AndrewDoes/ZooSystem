@@ -1,4 +1,4 @@
-package org.Main;
+package org.Managers;
 
 public class AdminManager {
     public void handleAdminLogin() {

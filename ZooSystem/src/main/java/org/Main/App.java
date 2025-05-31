@@ -2,8 +2,8 @@ package org.Main;
 
 import org.errors.HandleExceptions;
 import org.Main.UserInterfaceHandler;
-import org.Main.VisitorManager;
-import org.Main.AdminManager;
+import org.Managers.VisitorManager;
+import org.Managers.AdminManager;
 
 public class App {
     public void run() {
