@@ -1,6 +1,7 @@
 // Package of Visitor.java
 package org.Main;
 
+import org.UI.UserInterface;
 //Header Files Required
 import org.Zoo.Animal;
 import org.Zoo.Zoo;

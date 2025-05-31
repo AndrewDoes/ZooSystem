@@ -1,6 +1,6 @@
 package org.Managers;
 
-import org.Main.UserInterfaceHandler;
+import org.Handler.UserInterfaceHandler;
 import org.Main.Visitor;
 
 public class VisitorManager {

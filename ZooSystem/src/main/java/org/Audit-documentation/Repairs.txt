@@ -25,3 +25,6 @@
             Manages visitor-related operations, such as viewing attractions and purchasing tickets.
     - Solution: Extract class to:
                 - AttractionManager
+                - AttractionUserInterface
+                - AttractionFactory
+4. 
