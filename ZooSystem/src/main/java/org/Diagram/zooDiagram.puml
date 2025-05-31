@@ -1,0 +1,78 @@
+@startuml zooDiagram
+
+interface AnimalInterface {
+        + void addAnimal(Animal)
+        + void modifyAnimal(int, Animal)
+        + void removeAnimal(Animal)
+}
+
+class Animal implements AnimalInterface{
+        - String name
+        - String description
+        - String type
+        - String Sound
+        + Animal(String, String, String, String)
+        + static void viewAnimalInVisitor()
+        + static void viewAnimal()
+        + static boolean animalChoice(int)
+        + String getName()
+        + void setName(String)
+        + String getType()
+        + void setType(String)
+        + void addAnimal(Animal)
+        + void modifyAnimal(int, Animal)
+        + void removeAnimal(Animal)
+        + String getDescription()
+        + void setDescription(String)
+        + String getSound()
+        + void setSound(String)
+        + void feed()
+        + void read()
+    }
+
+    class Amphibian extends Animal{
+        + Amphibian(String, String, String, String)
+        + void addAnimal(Animal)
+        + void modifyAnimal(int, Animal)
+        + void removeAnimal(Animal)
+    }
+
+    class AmphibianType1 extends Amphibian{
+        + AmphibianType1(String, String, String, String)
+    }
+
+    class AmphibianType2 extends Amphibian{
+        + AmphibianType2(String, String, String, String)
+    }
+
+    class Mammal extends Animal{
+        + Mammal(String, String, String, String)
+        + void addAnimal(Animal)
+        + void modifyAnimal(int, Animal)
+        + void removeAnimal(Animal)
+    }
+
+    class MammalType1 extends Mammal{
+        + MammalType1(String, String, String, String)
+    }
+
+    class MammalType2 extends Mammal{
+        + MammalType2(String, String, String, String)
+    }
+
+    class Reptile extends Animal{
+        + Reptile(String, String, String, String)
+        + void addAnimal(Animal)
+        + void modifyAnimal(int, Animal)
+        + void removeAnimal(Animal)
+    }
+
+    class ReptileType1 extends Reptile{
+        + ReptileType1(String, String, String, String)
+    }
+
+    class ReptileType2 extends Reptile{
+        + ReptileType2(String, String, String, String)
+    }
+
+@enduml

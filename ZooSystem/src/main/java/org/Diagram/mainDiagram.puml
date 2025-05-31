@@ -1,0 +1,165 @@
+@startuml initialDiagram
+
+class Admin extends User implements UserAction {
+  - static final String ADMIN_USERNAME = "admin"
+  - static final String ADMIN_PASSWORD = "admin123"
+  - static boolean specialDeal1
+  - static boolean specialDeal2
+
+  + Admin()
+  + boolean adminChoice(int adminInput)
+  + boolean Logout()
+  + void Login()
+  + static boolean isSpecialDeal1()
+  + static void setSpecialDeal1(boolean specialDeal1)
+  + static boolean isSpecialDeal2()
+  + static void setSpecialDeal2(boolean specialDeal2)
+}
+
+class Attraction {
+  - name: String
+  - description: String
+  - ticketPrice: double
+  - uniqueID: int
+  - prevUniqueID: int
+  - isOpen: boolean
+  - countOfTicketedVisitors: int
+
+  + Attraction(name: String, description: String, ticketPrice: double)
+  + add(): void
+  + remove(): void
+  + modify(): void
+  + viewAttraction(): void
+  + viewAttractionVisitor(): int
+  + attractionChoice(adminAttractionInput: int): boolean
+  + getCountOfTicketedVisitors(): int
+  + setCountOfTicketedVisitors(countOfTicketedVisitors: int): void
+  + isOpen(): boolean
+  + setOpen(open: boolean): void
+
+  + getName(): String
+  + setName(name: String): void
+  + getDescription(): String
+  + setDescription(description: String): void
+  + getTicketPrice(): double
+  + setTicketPrice(ticketPrice: double): void
+  + getUniqueID(): int
+  + setUniqueID(uniqueID: int): void
+  + getPrevUniqueID(): int
+  + setPrevUniqueID(prevUniqueID: int): void
+}
+
+class Discount {
+  - discountCategory: String
+  - discountPercentage: int
+  - couponCode: String
+
+  + Discount(discountCategory: String, discountPercentage: int)
+  + add(): void
+  + remove(): void
+  + modify(): void
+  + search(discountCategory: String): int
+  + applyDiscountCode(balance: double, discountCode: String): double
+  + viewForVisitors(): void
+  + view(): void
+
+  + getDiscountCategory(): String
+  + setDiscountCategory(discountCategory: String): void
+  + getDiscountPercentage(): int
+  + setDiscountPercentage(discountPercentage: int): void
+  + getCouponCode(): String
+  + setCouponCode(couponCode: String): void
+}
+
+class Feedback {
+  - feedback: String
+
+  + getFeedback(): String
+  + setFeedback(feedback: String): void
+  + toString(): String
+}
+
+interface ModifyInterface {
+  + add()
+  + modify()
+  + remove()
+}
+
+class User {
+  - name: String
+  - password: String
+
+  + User(name: String, password: String)
+  + User()
+
+  + getName(): String
+  + setName(name: String): void
+  + getPassword(): String
+  + setPassword(password: String): void
+}
+
+interface UserAction {
+  + Logout(): boolean
+  + Login(): void
+}
+
+interface UserInterface {
+  + presentSpecialDeals()
+  + setSpecialDeal()
+  + visitAnimal()
+  + displayMembership()
+  + viewSpecialDeals()
+  + displayExploreZoo()
+  + displayScheduleEvents()
+  + displayVisitorLogin()
+  + displayVisitorMessage()
+  + displaySetDiscount()
+  + displayManageAnimals()
+  + displayManageAttractions()
+  + displayWelcomeMessage()
+  + displayAdminMessage()
+}
+
+class Visitor extends User implements UserAction{
+  - age: int
+  - phone: String
+  - balance: double
+  - email: String
+  - feedback: Feedback
+  - memberShip: String
+  - boughtTickets: HashMap<Attraction, Integer>
+
+  + Visitor(String name, String password, int age, String phone, double balance, String email)
+  + Visitor()
+
+  + visitorChoice(int visitorLoginInput): boolean
+  + isValidOrNot(String email): boolean
+  + visitorRegistration()
+  + register(String name, String password, int age, String phone, double balance, String email)
+  + Logout(): boolean
+  + Login()
+  + getAge(): int
+  + setAge(int age)
+  + getPhone(): String
+  + setPhone(String phone)
+  + getBalance(): double
+  + setBalance(double balance)
+  + getEmail(): String
+  + setEmail(String email)
+  + getFeedback(): Feedback
+  + setFeedback(Feedback feedback)
+  + getMemberShip(): String
+  + setMemberShip(String memberShip)
+}
+
+class VisitorStats {
+  - numberOfVisitors : int
+  - profitEarned : double
+  + mostVisitedAttractions() : ArrayList<Attraction>
+  + getNumberOfVisitors() : int
+  + setNumberOfVisitors(numberOfVisitors : int) : void
+  + getProfitEarned() : double
+  + setProfitEarned(profitEarned : double) : void
+}
+
+@enduml
