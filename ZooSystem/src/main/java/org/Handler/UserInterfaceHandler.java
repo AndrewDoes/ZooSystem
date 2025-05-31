@@ -1,8 +1,10 @@
-package org.Main;
+package org.Handler;
 
+import org.UI.UserInterface;
 import org.errors.HandleExceptions;
 
 public class UserInterfaceHandler {
+
     public void displayWelcomeMessage() {
         UserInterface.displayWelcomeMessage();
     }

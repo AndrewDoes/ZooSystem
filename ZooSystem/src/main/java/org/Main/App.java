@@ -1,7 +1,6 @@
 package org.Main;
 
-import org.errors.HandleExceptions;
-import org.Main.UserInterfaceHandler;
+import org.Handler.UserInterfaceHandler;
 import org.Managers.AdminManager;
 import org.Managers.VisitorManager;
 
