@@ -1,10 +1,27 @@
-1. Large Class (Main.java)
+1. Large Class (Main.java) <48c43ed0b30647fab8d1b3f409c8557835bdb728>
     - Problem : Main program should be separated from it's class
     - Solution: Added app.java to separate the program from main program calling
 
-2. Large Class (App.java)
+2. Large Class (App.java) <621185f1a5cf730fb271b4ab4fd2f76078629ba5>
     - problem : App program handles more than starting the app
     - Solution: Extract class to:
                 - AdminManager for handling admin request
                 - UserInterfaceHandler for handling UI request
                 - VisitorManager for handling visitor request
+
+3. Large Class (Attraction.java) <62d1f2a9af79d7e2ff33bcb34c56492b5b247e51>
+    - Problem : Attraction class handles more than Attraction related behaviour
+    - Responsibility:
+        - Data Management:
+            Manages the data related to an attraction, including attributes like name, description, ticketPrice, uniqueID, isOpen, and countOfTicketedVisitors.
+            Provides getter and setter methods for these attributes to encapsulate the data.
+        - CRUD Operations:
+            Implements methods to add, remove, and modify attractions in the presentAttractions list.
+            Manages the list of current attractions, including searching for attractions by unique ID.
+        - User Interaction:
+            Contains methods for displaying attractions and handling user input related to attractions.
+            Provides a method (attractionChoice) to handle different user choices for managing attractions.
+            Visitor Interaction:
+            Manages visitor-related operations, such as viewing attractions and purchasing tickets.
+    - Solution: Extract class to:
+                - AttractionManager
