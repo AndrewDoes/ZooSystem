@@ -1,3 +1,10 @@
 1. Large Class (Main.java)
     - Problem : Main program should be separated from it's class
     - Solution: Added app.java to separate the program from main program calling
+
+2. Large Class (App.java)
+    - problem : App program handles more than starting the app
+    - Solution: Extract class to:
+                - AdminManager for handling admin request
+                - UserInterfaceHandler for handling UI request
+                - VisitorManager for handling visitor request
